@@ -26,17 +26,23 @@
 
 > SprintSignal は Google Apps Script で動くため、ブラウザだけあれば OK です。
 
-**Mac での簡単なインストール方法 (ターミナルにコピペするだけ):**
+**Mac での簡単なインストール方法 (ターミナルに 1 行ずつコピペ):**
 
-```bash
-# 1. Homebrew をインストール (初回のみ)
+まず Homebrew をインストール (初回のみ):
+```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-# 2. Node.js と Python をインストール
+次に Node.js と Python をインストール:
+```
 brew install node python
 ```
 
-> インストールできたか確認: `node -v` と `python3 --version` でバージョンが表示されれば OK です。
+インストールできたか確認:
+```
+node -v && python3 --version
+```
+> バージョン番号が表示されれば OK です。
 
 ### 2. API キー / 認証情報を受け取る
 
