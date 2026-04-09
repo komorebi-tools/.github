@@ -28,17 +28,17 @@
 
 **Mac での簡単なインストール方法 (ターミナルに 1 行ずつコピペ):**
 
-まず Homebrew をインストール (初回のみ):
+1. Homebrew をインストール (初回のみ):
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-次に Node.js と Python をインストール:
+2. Node.js と Python をインストール:
 ```
 brew install node python
 ```
 
-インストールできたか確認:
+3. インストールできたか確認:
 ```
 node -v && python3 --version
 ```
