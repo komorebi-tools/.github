@@ -4,14 +4,14 @@
 
 ## ツール一覧
 
-| ツール | 概要 |
-|---|---|
-| [Report Studio](https://github.com/komorebi-tools/report-studio) | テキスト原稿から図解付き Web レポート / PDF を自動生成 |
-| [Slide Editor](https://github.com/komorebi-tools/slide-editor) | Markdown / テキストから PPTX スライドを自動生成 |
-| [PPTX Skill](https://github.com/komorebi-tools/pptx-skill) | PowerPoint スライド生成エンジン (Claude Code Skill) |
-| [FA Analysis Skill](https://github.com/komorebi-tools/fa-analysis-skill) | FA データ分析スキル |
-| [SprintSignal](https://github.com/komorebi-tools/sprint-signal) | GAS で「コンサル_プロジェクト管理」スプシの更新を検知し Slack に通知 |
-| [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack 通知 |
+| ツール | 概要 | 管理者 |
+|---|---|---|
+| [Report Studio](https://github.com/komorebi-tools/report-studio) | テキスト原稿から図解付き Web レポート / PDF を自動生成 | 安原 |
+| [Slide Editor](https://github.com/komorebi-tools/slide-editor) | Markdown / テキストから PPTX スライドを自動生成 | 安原 |
+| [PPTX Skill](https://github.com/komorebi-tools/pptx-skill) | PowerPoint スライド生成エンジン (Claude Code Skill) | 安原 |
+| [FA Analysis Skill](https://github.com/komorebi-tools/fa-analysis-skill) | FA データ分析スキル | 安原 |
+| [SprintSignal](https://github.com/komorebi-tools/sprint-signal) | GAS で「コンサル_プロジェクト管理」スプシの更新を検知し Slack に通知 | 佐々木 |
+| [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack 通知 | 佐々木 |
 
 ## セットアップ
 
