@@ -18,18 +18,28 @@
 ### 共通
 
 - **Git** — ここからソースコードをダウンロード (`git clone`) するために必要。[インストール方法](https://git-scm.com/)
-- **Gemini API キー** — AI 機能 (文章整理・図解生成・画像生成など) に使用。社内共通の課金済みキーを管理者から受け取ってください
 
-### ツール別
+### API キー / 認証情報
 
-| ツール | ランタイム | API キー / 認証 |
-|---|---|---|
-| Report Studio | Node.js 18+ | Gemini API キー |
-| Slide Editor | Node.js 18+ / Python 3.10+ | Gemini API キー、Google OAuth (Slides 連携時) |
-| PPTX Skill | Node.js 18+ | Gemini API キー、Google Drive API (アップロード時) |
-| FA Analysis Skill | Python 3.10+ | なし |
-| SprintSignal | Google Apps Script | Slack Incoming Webhook URL |
-| ML Summary Bot | Python 3.11+ | Anthropic API キー、Slack Bot Token、Gmail OAuth |
+| 種類 | 用途 | 使うツール | 取得方法 |
+|---|---|---|---|
+| Gemini API キー | 文章整理・図解生成・画像生成など | Report Studio, Slide Editor, PPTX Skill | 社内共通の課金済みキーを管理者から受け取る |
+| Google OAuth | Google Slides / Drive へのアップロード | Slide Editor, PPTX Skill | 各ツールの README を参照 |
+| Anthropic API キー | メール要約 (Claude) | ML Summary Bot | 管理者から受け取る |
+| Slack Bot Token | Slack への自動投稿 | ML Summary Bot | 管理者から受け取る |
+| Slack Incoming Webhook URL | Slack への自動投稿 | SprintSignal | 管理者から受け取る |
+| Gmail OAuth | メール取得 | ML Summary Bot | 各ツールの README を参照 |
+
+### ランタイム
+
+| ツール | 必要な環境 |
+|---|---|
+| Report Studio | Node.js 18+ |
+| Slide Editor | Node.js 18+ / Python 3.10+ |
+| PPTX Skill | Node.js 18+ |
+| FA Analysis Skill | Python 3.10+ |
+| SprintSignal | Google Apps Script (ブラウザのみ) |
+| ML Summary Bot | Python 3.11+ |
 
 ## セットアップ
 
