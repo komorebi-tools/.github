@@ -52,8 +52,8 @@ node -v && python3 --version
 | Anthropic API キー | メール要約 (Claude) | ML Summary Bot | 社内共通の課金済みキーを管理者 (安原または佐々木) から受け取る |
 | Slack Bot Token | Slack への自動投稿 | ML Summary Bot | Slack ワークスペースの管理者から受け取る |
 | Slack Incoming Webhook URL | Slack への自動投稿 | SprintSignal | Slack ワークスペースの管理者から受け取る |
-| Google OAuth | Google Slides / Drive へのアップロード | Slide Editor, PPTX Skill | 初回起動時に自分の Google アカウントで認証 |
-| Gmail OAuth | メール取得 | ML Summary Bot | 初回起動時に自分の Google アカウントで認証 |
+| Google OAuth | Google Slides / Drive へのアップロード | Slide Editor, PPTX Skill | 自分の Google アカウントで認証 (初回起動時のみ) |
+| Gmail OAuth | メール取得 | ML Summary Bot | 自分の Google アカウントで認証 (初回起動時のみ) |
 
 ### 3. ツールをダウンロードして起動
 
