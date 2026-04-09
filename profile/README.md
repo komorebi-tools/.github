@@ -50,8 +50,8 @@ node -v && python3 --version
 
 | 種類 | 用途 | 使うツール | 取得方法 |
 |---|---|---|---|
-| Gemini API キー | 文章整理・図解生成・画像生成など | Report Studio, Slide Editor, PPTX Skill | 社内共通の課金済みキーを管理者から受け取る |
-| Anthropic API キー | メール要約 (Claude) | ML Summary Bot | Claude の有料プラン契約管理者 (安原) に確認 |
+| Gemini API キー | 文章整理・図解生成・画像生成など | Report Studio, Slide Editor, PPTX Skill | 社内共通の課金済みキーを管理者 (安原または佐々木) から受け取る |
+| Anthropic API キー | メール要約 (Claude) | ML Summary Bot | 社内共通の課金済みキーを管理者 (安原または佐々木) から受け取る |
 | Slack Bot Token | Slack への自動投稿 | ML Summary Bot | 管理者から受け取る |
 | Slack Incoming Webhook URL | Slack への自動投稿 | SprintSignal | 管理者から受け取る |
 | Google OAuth | Google Slides / Drive へのアップロード | Slide Editor, PPTX Skill | 初回起動時に自分の Google アカウントで認証 |
