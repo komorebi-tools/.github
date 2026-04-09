@@ -11,7 +11,7 @@
 | [PPTX Skill](https://github.com/komorebi-tools/pptx-skill) | PowerPoint スライド生成エンジン (Claude Code Skill) |
 | [FA Analysis Skill](https://github.com/komorebi-tools/fa-analysis-skill) | FA データ分析スキル |
 | [SprintSignal](https://github.com/komorebi-tools/sprint-signal) | GAS 製の週次作業予定 Slack 通知 |
-| [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | メルマガ要約 → Slack 通知システム |
+| [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack 通知 |
 
 ## セットアップ
 
