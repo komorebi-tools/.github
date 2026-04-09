@@ -17,8 +17,8 @@
 
 ### 共通
 
-- [Git](https://git-scm.com/) — ソースコードの取得・管理
-- [Gemini API キー](https://aistudio.google.com/apikey) — AI 機能 (文章整理・図解生成・画像生成など) に使用。Google AI Studio から無料で取得可能
+- **Git** — ここからソースコードをダウンロード (`git clone`) するために必要。[インストール方法](https://git-scm.com/)
+- **Gemini API キー** — AI 機能 (文章整理・図解生成・画像生成など) に使用。社内共通の課金済みキーを管理者から受け取ってください
 
 ### ツール別
 
