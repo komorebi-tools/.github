@@ -13,20 +13,9 @@
 | [SprintSignal](https://github.com/komorebi-tools/sprint-signal) | スプシ「コンサル_プロジェクト管理」の更新を GAS で検知し、要約を Slack に自動投稿 | 佐々木 |
 | [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack に自動投稿 | 佐々木 |
 
-## 必要なもの
+## はじめかた
 
-### API キー / 認証情報
-
-| 種類 | 用途 | 使うツール | 取得方法 |
-|---|---|---|---|
-| Gemini API キー | 文章整理・図解生成・画像生成など | Report Studio, Slide Editor, PPTX Skill | 社内共通の課金済みキーを管理者から受け取る |
-| Google OAuth | Google Slides / Drive へのアップロード | Slide Editor, PPTX Skill | 各ツールの README を参照 |
-| Anthropic API キー | メール要約 (Claude) | ML Summary Bot | 管理者から受け取る |
-| Slack Bot Token | Slack への自動投稿 | ML Summary Bot | 管理者から受け取る |
-| Slack Incoming Webhook URL | Slack への自動投稿 | SprintSignal | 管理者から受け取る |
-| Gmail OAuth | メール取得 | ML Summary Bot | 各ツールの README を参照 |
-
-### 事前にインストールが必要なソフトウェア
+### 1. ソフトウェアのインストール
 
 各ツールを動かすために、PC に以下をインストールしておく必要があります。
 
@@ -49,11 +38,24 @@ brew install node python
 
 > インストールできたか確認: `node -v` と `python3 --version` でバージョンが表示されれば OK です。
 
-## セットアップ
+### 2. API キー / 認証情報を受け取る
+
+ツールに応じて、以下の API キーや認証情報を管理者から受け取ってください。
+
+| 種類 | 用途 | 使うツール | 取得方法 |
+|---|---|---|---|
+| Gemini API キー | 文章整理・図解生成・画像生成など | Report Studio, Slide Editor, PPTX Skill | 社内共通の課金済みキーを管理者から受け取る |
+| Google OAuth | Google Slides / Drive へのアップロード | Slide Editor, PPTX Skill | 各ツールの README を参照 |
+| Anthropic API キー | メール要約 (Claude) | ML Summary Bot | 管理者から受け取る |
+| Slack Bot Token | Slack への自動投稿 | ML Summary Bot | 管理者から受け取る |
+| Slack Incoming Webhook URL | Slack への自動投稿 | SprintSignal | 管理者から受け取る |
+| Gmail OAuth | メール取得 | ML Summary Bot | 各ツールの README を参照 |
+
+### 3. ツールをダウンロードして起動
 
 各ツールの README にセットアップ手順を記載しています。基本的な流れ:
 
-1. リポジトリを clone
-2. 依存パッケージをインストール
-3. `.env` に API キーを設定
+1. ターミナルで `git clone <リポジトリ URL>` を実行してソースコードをダウンロード
+2. 依存パッケージをインストール (`npm install` や `pip install` など)
+3. `.env` ファイルに API キーを設定
 4. 起動
