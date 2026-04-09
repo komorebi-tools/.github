@@ -30,12 +30,24 @@
 
 各ツールを動かすために、PC に以下をインストールしておく必要があります。
 
-| ソフトウェア | 使うツール | インストール方法 |
-|---|---|---|
-| [Node.js](https://nodejs.org/) (18 以上) | Report Studio, Slide Editor, PPTX Skill | 公式サイトからダウンロード |
-| [Python](https://www.python.org/) (3.10 以上) | Slide Editor, FA Analysis Skill, ML Summary Bot | 公式サイトからダウンロード |
+| ソフトウェア | 使うツール |
+|---|---|
+| Node.js | Report Studio, Slide Editor, PPTX Skill |
+| Python | Slide Editor, FA Analysis Skill, ML Summary Bot |
 
 > SprintSignal は Google Apps Script で動くため、ブラウザだけあれば OK です。
+
+**Mac での簡単なインストール方法 (ターミナルにコピペするだけ):**
+
+```bash
+# 1. Homebrew をインストール (初回のみ)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 2. Node.js と Python をインストール
+brew install node python
+```
+
+> インストールできたか確認: `node -v` と `python3 --version` でバージョンが表示されれば OK です。
 
 ## セットアップ
 
