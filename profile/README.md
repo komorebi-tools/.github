@@ -30,16 +30,16 @@
 | Slack Incoming Webhook URL | Slack への自動投稿 | SprintSignal | 管理者から受け取る |
 | Gmail OAuth | メール取得 | ML Summary Bot | 各ツールの README を参照 |
 
-### ランタイム
+### 事前にインストールが必要なソフトウェア
 
-| ツール | 必要な環境 |
-|---|---|
-| Report Studio | Node.js 18+ |
-| Slide Editor | Node.js 18+ / Python 3.10+ |
-| PPTX Skill | Node.js 18+ |
-| FA Analysis Skill | Python 3.10+ |
-| SprintSignal | Google Apps Script (ブラウザのみ) |
-| ML Summary Bot | Python 3.11+ |
+各ツールを動かすために、PC に以下をインストールしておく必要があります。
+
+| ソフトウェア | 使うツール | インストール方法 |
+|---|---|---|
+| [Node.js](https://nodejs.org/) (18 以上) | Report Studio, Slide Editor, PPTX Skill | 公式サイトからダウンロード |
+| [Python](https://www.python.org/) (3.10 以上) | Slide Editor, FA Analysis Skill, ML Summary Bot | 公式サイトからダウンロード |
+
+> SprintSignal は Google Apps Script で動くため、ブラウザだけあれば OK です。
 
 ## セットアップ
 
