@@ -12,6 +12,7 @@
 | [FA Analysis Skill](https://github.com/komorebi-tools/fa-analysis-skill) | FA データ分析スキル | 安原 |
 | [SprintSignal](https://github.com/komorebi-tools/sprint-signal) | スプシ「コンサル_プロジェクト管理」の更新を GAS で検知し、要約を Slack に自動投稿 | 佐々木 |
 | [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack に自動投稿 | 佐々木 |
+| [Design System](https://github.com/komorebi-tools/design-system) | コモレビのカラー・フォント・コンポーネント定義 | 安原 |
 
 ## はじめかた
 
