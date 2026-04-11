@@ -12,7 +12,61 @@
 | [FA Analysis Skill](https://github.com/komorebi-tools/fa-analysis-skill) | FA データ分析スキル | 安原 |
 | [SprintSignal](https://github.com/komorebi-tools/sprint-signal) | スプシ「コンサル_プロジェクト管理」の更新を GAS で検知し、要約を Slack に自動投稿 | 佐々木 |
 | [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack に自動投稿 | 佐々木 |
-| [Design System](https://github.com/komorebi-tools/design-system) | コモレビのカラー・フォント・コンポーネント定義 | 佐々木 |
+| [Design System](https://github.com/komorebi-tools/design-system) | コモレビのカラー、フォント、コンポーネント定義 + Claude Code スキル | 佐々木 |
+
+---
+
+## Design System の仕組み
+
+Claude Code に「コモレビの LP を作って」と伝えるだけで、デザインが意図通りに出てきます。
+
+プロンプトに色やフォントを毎回書く必要はありません。
+
+プロジェクトに設計書を置いているため、Claude Code がセッション開始時に自動で読み込みます。
+
+### 構成
+
+```
+design-system/
+├── DESIGN.md                    ... デザイン仕様書 (色、フォント、余白、コンポーネント)
+├── index.html                   ... ビジュアルプレビュー (GitHub Pages)
+├── contracts/
+│   └── rules.json               ... 禁止ルール 9 件 (hook で自動チェック)
+├── assets/
+│   ├── logo/                    ... ロゴ素材 (PNG 透過、JPG 白背景)
+│   └── tools/                   ... 各ツールのロゴ SVG
+└── .claude/
+    └── skills/
+        └── komorebi-design-system/
+            └── SKILL.md         ... Claude Code 用スキル
+```
+
+### 各ファイルの役割
+
+| ファイル | 何をしているか |
+|---|---|
+| DESIGN.md | 色、フォント、角丸、余白、シャドウを数値で定義。Claude Code はここを見てトークン準拠の CSS を書く |
+| SKILL.md | デザイントークン、情報ソース (コーポレートサイト、会社説明スライド)、品質 3 層定義 (L1/L2/L3)、アンチパターン (AI Slop 回避)、チェックリストを定義。Claude Code が UI を作る際の判断基準になる |
+| rules.json | 絵文字禁止、#000000 禁止、全角括弧禁止など 9 件の禁止ルール。ファイル編集のたびに hook が自動チェックし、違反があれば警告する |
+| index.html | DESIGN.md をビジュアルで確認できるプレビューページ → https://komorebi-tools.github.io/design-system/ |
+
+### 品質を維持する 3 層の仕組み
+
+1. **DESIGN.md** がルールを定義する
+2. **SKILL.md** が Claude Code に判断基準を与える
+3. **rules.json + hook** が編集のたびに違反を自動検出する
+
+この 3 層で、誰が作業しても品質がブレない構造になっています。
+
+### スキルの導入方法
+
+Claude Code に以下を伝えてください。
+
+> komorebi-tools/design-system リポジトリから .claude/skills/komorebi-design-system/SKILL.md を取得して、このプロジェクトの同じパスに配置して。
+
+詳しくは [design-system の README](https://github.com/komorebi-tools/design-system#claude-code-%E3%82%B9%E3%82%AD%E3%83%AB--komorebi-design-system) を参照してください。
+
+---
 
 ## Claude Code でツール開発のはじめかた
 
