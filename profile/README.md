@@ -14,25 +14,6 @@
 | [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | 自動化 | consulting-team ML に届いたメールを要約し、Slack に自動投稿 | 佐々木 |
 | [Design System](https://github.com/komorebi-tools/design-system) | 設計基盤 | コモレビのカラー、フォント、コンポーネント定義 + Claude Code スキル | 佐々木 |
 
-### リポジトリ構成図
-
-```mermaid
-graph LR
-  DS["Design System<br><small>設計基盤</small>"]
-  RS["Report Studio<br><small>Web ツール</small>"]
-  SE["Slide Editor<br><small>Web ツール</small>"]
-  PS["PPTX Skill<br><small>スキル</small>"]
-  FA["FA Analysis Skill<br><small>スキル</small>"]
-  SS["SprintSignal<br><small>自動化 / GAS</small>"]
-  ML["ML Summary Bot<br><small>自動化 / Python</small>"]
-
-  DS -->|デザイントークン| RS
-  DS -->|デザイントークン| SE
-  DS -->|デザイントークン| PS
-  DS -->|デザイントークン| FA
-  PS -->|スライド生成エンジン| SE
-```
-
 ## 共通ファイルの仕組み
 
 コモレビのツールは、いくつかの共通ファイルによって品質が統一されています。
