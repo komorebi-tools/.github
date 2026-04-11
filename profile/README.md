@@ -56,7 +56,7 @@ bash claude-code-org-setup/setup.sh
 
 Mac のパスワードを聞かれるので入力してください。「セットアップ完了」と表示されれば OK です。
 
-> 詳しいルール内容や FAQ は Notion の「Claude Code 組織共通設定」ページを参照してください。
+> 詳しいルール内容や FAQ は [Notion の「Claude Code 組織共通設定」ページ](https://www.notion.so/komorebi-inc/Claude-Code-33f13485e9d08044adc8d291c70149dc) を参照してください。
 
 ### 3. API キー / 認証情報を用意する
 
