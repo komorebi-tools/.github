@@ -20,7 +20,7 @@
 
 Claude Code はセッション開始時にこれらを自動で読み込むため、プロンプトに色やフォントを毎回書く必要がありません。
 
-### デザインルール ([design-system](https://github.com/komorebi-tools/design-system) で一元管理)
+### デザインルール (社内共通、[design-system](https://github.com/komorebi-tools/design-system) にまとめて管理)
 
 | ファイル | 役割 |
 |---|---|
