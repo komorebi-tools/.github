@@ -14,7 +14,7 @@
 | [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack に自動投稿 | 佐々木 |
 | [Design System](https://github.com/komorebi-tools/design-system) | コモレビのカラー・フォント・コンポーネント定義 | 佐々木 |
 
-## はじめかた
+## Claude Code でツール開発のはじめかた
 
 ### 1. ソフトウェアのインストール
 
