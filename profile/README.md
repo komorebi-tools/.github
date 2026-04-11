@@ -1,6 +1,6 @@
 # Komorebi Tools
 
-コモレビ社内ツールのソースコードを管理、共同編集するための GitHub Organization です。
+コモレビ社内ツールのソースコードを管理・共同編集するための GitHub Organization です。1リポジトリ = 1ツールで構成されています。
 
 ## ツール&#xB7;スキル一覧
 
