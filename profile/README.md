@@ -1,6 +1,6 @@
 # Komorebi Tools
 
-コモレビ社内ツールのソースコードを管理・共同編集するための GitHub Organization です。
+コモレビ社内ツールのソースコードを管理、共同編集するための GitHub Organization です。
 
 ## リポジトリ一覧
 
@@ -14,19 +14,33 @@
 | 自動化 | [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack に自動投稿 | 佐々木 |
 | 設計基盤 | [Design System](https://github.com/komorebi-tools/design-system) | コモレビのカラー、フォント、コンポーネント定義 + Claude Code スキル | 佐々木 |
 
-## 共通の設計ルール
+## 共通ファイルの仕組み
 
-各ツールの UI は共通のデザインルールに従って作られています。
+コモレビのツールは、いくつかの共通ファイルによって品質が統一されています。
 
-プロジェクトに設計ファイルを置いておくと、Claude Code がセッション開始時に自動で読み込むため、プロンプトに色やフォントを毎回書く必要がありません。
+Claude Code はセッション開始時にこれらを自動で読み込むため、プロンプトに色やフォントを毎回書く必要がありません。
+
+### プロジェクト共通 (各リポジトリに配置)
 
 | ファイル | 役割 |
 |---|---|
 | DESIGN.md | 色、フォント、角丸、余白、シャドウを数値で定義。Claude Code はここを見てトークン準拠の CSS を書く |
 | SKILL.md | デザイントークン、情報ソース、品質 3 層定義 (L1/L2/L3)、アンチパターン、チェックリスト。Claude Code の判断基準になる |
-| rules.json | 絵文字禁止、#000000 禁止、全角括弧禁止など 9 件の禁止ルール。ファイル編集のたびに自動チェックし、違反があれば警告する |
+| contracts/rules.json | 絵文字禁止、#000000 禁止、全角括弧禁止など 9 件の禁止ルール。ファイル編集のたびに自動チェックし、違反があれば警告する |
 
-この 3 つで「ルール定義 → 判断基準 → 自動検出」の流れができており、誰が作業しても品質がブレません。
+### 個人の PC 全体 (全プロジェクトに適用)
+
+| ファイル | 役割 |
+|---|---|
+| CLAUDE.md | 「読んでいないコードは変更するな」「絵文字禁止」「Markdown の改行ルール」など、全プロジェクト共通の作業ルール |
+| ~/.claude/settings.json | 権限設定、deny ルール (rm -rf / force push のブロック)、hook 設定、effortLevel など |
+| ~/.claude/hooks/design-check.sh | Edit / Write のたびに rules.json の禁止パターンを自動チェックする hook |
+
+### 品質維持の流れ
+
+1. **DESIGN.md** がルールを定義する
+2. **SKILL.md** が Claude Code に判断基準を与える
+3. **rules.json + hook** が編集のたびに違反を自動検出する
 
 プレビューページで全トークンをビジュアル確認できます → https://komorebi-tools.github.io/design-system/
 
@@ -47,35 +61,47 @@
 
 > SprintSignal は Google Apps Script で動くため、ブラウザだけあれば OK です。
 
-Claude Code に以下のように伝えてください。
+Claude Code に以下を伝えてください。
 
 > Homebrew, Node.js, Python がインストールされているか確認して、入っていなければインストールしてください。
 
 ### 2. Claude Code の組織共通設定
 
-全メンバーの Claude Code に共通のセキュリティ・品質ルールを適用します。初回のみ実行してください。
+全メンバーの Claude Code に共通のセキュリティ、品質ルールを適用します。
 
-Claude Code に以下のように伝えてください。
+初回のみ実行してください。
 
-> https://github.com/komorebi-tools/claude-code-org-setup をクローンして、setup.sh をターミナルで実行する手順を教えてください。
+Claude Code に以下を伝えてください。
 
-ターミナルで実行するよう案内されるので、そのとおりに実行してください。Mac のパスワードを聞かれるので入力します。
+> komorebi-tools/claude-code-org-setup をクローンして、README の手順に従ってセットアップしてください。
 
 > 詳しいルール内容や FAQ は [Notion の「Claude Code 組織共通設定」ページ](https://www.notion.so/komorebi-inc/Claude-Code-33f13485e9d08044adc8d291c70149dc) を参照してください。
 
-### 3. API キー、認証情報を用意する
+### 3. デザインスキルを追加する
+
+コモレビの UI を作るプロジェクトには、デザインスキルを追加してください。
+
+Claude Code に以下を伝えてください。
+
+> komorebi-tools/design-system リポジトリから .claude/skills/komorebi-design-system/SKILL.md を取得して、このプロジェクトの同じパスに配置して。
+
+これで「コモレビの LP を作って」と伝えるだけで、デザインルールに沿った UI が生成されます。
+
+### 4. API キー、認証情報を用意する
 
 | 種類 | 用途 | 使うツール | 取得方法 |
 |---|---|---|---|
-| Gemini API キー | 文章整理・図解生成・画像生成・メール要約など | Report Studio, Slide Editor, PPTX Skill, ML Summary Bot | 社内共通の課金済みキーを安原または佐々木から受け取る |
-| Slack Bot Token | Slack への自動投稿 | ML Summary Bot | [Slack API](https://api.slack.com/apps) でアプリを作成して取得。権限がない場合は Slack ワークスペースの管理者から受け取る |
-| Slack Incoming Webhook URL | Slack への自動投稿 | SprintSignal | [Slack API](https://api.slack.com/apps) で Incoming Webhooks を有効化して取得。権限がない場合は Slack ワークスペースの管理者から受け取る |
+| Gemini API キー | 文章整理、図解生成、画像生成、メール要約など | Report Studio, Slide Editor, PPTX Skill, ML Summary Bot | 社内共通の課金済みキーを安原または佐々木から受け取る |
+| Slack Bot Token | Slack への自動投稿 | ML Summary Bot | [Slack API](https://api.slack.com/apps) でアプリを作成して取得。権限がない場合は管理者から受け取る |
+| Slack Incoming Webhook URL | Slack への自動投稿 | SprintSignal | [Slack API](https://api.slack.com/apps) で Incoming Webhooks を有効化して取得。権限がない場合は管理者から受け取る |
 | Google OAuth | Google Slides / Drive へのアップロード | Slide Editor, PPTX Skill | 自分の Google アカウントで認証 (初回起動時のみ) |
 | Gmail OAuth | メール取得 | ML Summary Bot | 自分の Google アカウントで認証 (初回起動時のみ) |
 
-### 4. ツールをダウンロードして起動
+### 5. ツールをダウンロードして起動
 
-使いたいツールの GitHub ページを開き、リポジトリ URL をコピーしてください。Claude Code に以下のように伝えてください。
+使いたいツールの GitHub ページを開き、リポジトリ URL をコピーしてください。
+
+Claude Code に以下を伝えてください。
 
 > (リポジトリ URL) をクローンして、README に従ってセットアップしてください。Gemini API キーは (ここにキーを貼る) です。
 
