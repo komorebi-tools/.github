@@ -14,19 +14,6 @@
 | [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack に自動投稿 | 佐々木 |
 | [Design System](https://github.com/komorebi-tools/design-system) | コモレビのカラー・フォント・コンポーネント定義 | 佐々木 |
 
-## Claude Code 組織共通設定
-
-全メンバーの Claude Code に共通のセキュリティ・品質ルールを適用する仕組みです。
-
-- リポジトリ: [claude-code-org-setup](https://github.com/komorebi-tools/claude-code-org-setup)
-- 詳しい手順: Notion「Claude Code 組織共通設定」ページ
-
-初回セットアップ:
-```
-git clone https://github.com/komorebi-tools/claude-code-org-setup.git
-bash claude-code-org-setup/setup.sh
-```
-
 ## はじめかた
 
 ### 1. ソフトウェアのインストール
@@ -58,7 +45,20 @@ node -v && python3 --version
 ```
 > バージョン番号が表示されれば OK です。
 
-### 2. API キー / 認証情報を用意する
+### 2. Claude Code の組織共通設定
+
+全メンバーの Claude Code に共通のセキュリティ・品質ルールを適用します。初回のみ実行してください。
+
+```
+git clone https://github.com/komorebi-tools/claude-code-org-setup.git
+bash claude-code-org-setup/setup.sh
+```
+
+Mac のパスワードを聞かれるので入力してください。「セットアップ完了」と表示されれば OK です。
+
+> 詳しいルール内容や FAQ は Notion の「Claude Code 組織共通設定」ページを参照してください。
+
+### 3. API キー / 認証情報を用意する
 
 | 種類 | 用途 | 使うツール | 取得方法 |
 |---|---|---|---|
@@ -68,7 +68,7 @@ node -v && python3 --version
 | Google OAuth | Google Slides / Drive へのアップロード | Slide Editor, PPTX Skill | 自分の Google アカウントで認証 (初回起動時のみ) |
 | Gmail OAuth | メール取得 | ML Summary Bot | 自分の Google アカウントで認証 (初回起動時のみ) |
 
-### 3. ツールをダウンロードして起動
+### 4. ツールをダウンロードして起動
 
 各ツールの README にセットアップ手順を記載しています。基本的な流れ:
 
