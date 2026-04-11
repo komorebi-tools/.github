@@ -14,6 +14,19 @@
 | [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack に自動投稿 | 佐々木 |
 | [Design System](https://github.com/komorebi-tools/design-system) | コモレビのカラー・フォント・コンポーネント定義 | 佐々木 |
 
+## Claude Code 組織共通設定
+
+全メンバーの Claude Code に共通のセキュリティ・品質ルールを適用する仕組みです。
+
+- リポジトリ: [claude-code-org-setup](https://github.com/komorebi-tools/claude-code-org-setup)
+- 詳しい手順: Notion「Claude Code 組織共通設定」ページ
+
+初回セットアップ:
+```
+git clone https://github.com/komorebi-tools/claude-code-org-setup.git
+bash claude-code-org-setup/setup.sh
+```
+
 ## はじめかた
 
 ### 1. ソフトウェアのインストール
