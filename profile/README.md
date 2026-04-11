@@ -2,17 +2,17 @@
 
 コモレビ社内ツールのソースコードを管理・共同編集するための GitHub Organization です。
 
-## ツール一覧
+## リポジトリ一覧
 
-| ツール | 概要 | 管理者 |
-|---|---|---|
-| [Report Studio](https://github.com/komorebi-tools/report-studio) | テキスト原稿から図解付き Web レポート / PDF を自動生成 | 安原 |
-| [Slide Editor](https://github.com/komorebi-tools/slide-editor) | Markdown / テキストから PPTX スライドを自動生成 | 安原 |
-| [PPTX Skill](https://github.com/komorebi-tools/pptx-skill) | PowerPoint スライド生成エンジン (Claude Code Skill) | 安原 |
-| [FA Analysis Skill](https://github.com/komorebi-tools/fa-analysis-skill) | FA データ分析スキル | 安原 |
-| [SprintSignal](https://github.com/komorebi-tools/sprint-signal) | スプシ「コンサル_プロジェクト管理」の更新を GAS で検知し、要約を Slack に自動投稿 | 佐々木 |
-| [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack に自動投稿 | 佐々木 |
-| [Design System](https://github.com/komorebi-tools/design-system) | コモレビのカラー、フォント、コンポーネント定義 + Claude Code スキル | 佐々木 |
+| 分類 | リポジトリ | 概要 | 管理者 |
+|---|---|---|---|
+| Web ツール | [Report Studio](https://github.com/komorebi-tools/report-studio) | テキスト原稿から図解付き Web レポート / PDF を自動生成 | 安原 |
+| Web ツール | [Slide Editor](https://github.com/komorebi-tools/slide-editor) | Markdown / テキストから PPTX スライドを自動生成 | 安原 |
+| Claude Code スキル | [PPTX Skill](https://github.com/komorebi-tools/pptx-skill) | PowerPoint スライド生成エンジン | 安原 |
+| Claude Code スキル | [FA Analysis Skill](https://github.com/komorebi-tools/fa-analysis-skill) | FA データ分析スキル | 安原 |
+| 自動化 | [SprintSignal](https://github.com/komorebi-tools/sprint-signal) | スプシ「コンサル_プロジェクト管理」の更新を GAS で検知し、要約を Slack に自動投稿 | 佐々木 |
+| 自動化 | [ML Summary Bot](https://github.com/komorebi-tools/ml-summary-bot) | consulting-team ML に届いたメールを要約し、Slack に自動投稿 | 佐々木 |
+| 設計基盤 | [Design System](https://github.com/komorebi-tools/design-system) | コモレビのカラー、フォント、コンポーネント定義 + Claude Code スキル | 佐々木 |
 
 ## Claude Code でツール開発のはじめかた
 
