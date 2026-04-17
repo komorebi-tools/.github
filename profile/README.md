@@ -10,6 +10,7 @@
 |---|---|---|---|
 | [Report Studio](https://github.com/komorebi-tools/report-studio) | Web ツール | テキスト原稿から図解付き Web レポート / PDF を自動生成 | 安原 |
 | [Slide Editor](https://github.com/komorebi-tools/slide-editor) | Web ツール | Markdown / テキストから PPTX スライドを自動生成 | 安原 |
+| [Research Analysis](https://github.com/komorebi-tools/komorebi-research-analysis) | Web ツール | Excel 定性調査データを Gemini AI で自動分析 (ナラティブ / 価値構造 / インサイト / コンセプト) | 安原 |
 | [PPTX Skill](https://github.com/komorebi-tools/pptx-skill) | Claude Code スキル | PowerPoint スライド生成エンジン | 安原 |
 | [FA Analysis Skill](https://github.com/komorebi-tools/fa-analysis-skill) | Claude Code スキル | FA データ分析スキル | 安原 |
 | [SprintSignal](https://github.com/komorebi-tools/sprint-signal) | 自動化 | スプシ「コンサル_プロジェクト管理」の更新を GAS で検知し、要約を Slack に自動投稿 | 佐々木 |
